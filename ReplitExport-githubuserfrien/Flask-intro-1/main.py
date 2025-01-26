@@ -67,4 +67,20 @@ def get_stats():
         'Information Technology': it
     })
 
+app.route('/add/a/b')
+def add(a, b):
+    return a + b
+
+app.route('/subtract/a/b')
+def subtract(a, b):
+    return a - b
+
+app.route('/multiply/a/b')
+def multiply(a, b):
+    return a * b
+
+app.route('/divide/a/b')
+def divide(a, b):
+    return a / b
+
 app.run(host='0.0.0.0', port=8080, debug=True)
