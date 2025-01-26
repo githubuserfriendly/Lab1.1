@@ -37,11 +37,14 @@ def get_student(id):
 def get_stats():
     chicken = 0
     fish = 0
+    vegetable = 0
     cs = 0
     it = 0
     cs_special = 0
     it_special = 0
     for student in data:
+        if student['pref'] == 'Vegetable':
+            vegetable += 1
         if student['pref'] == 'Chicken':
             chicken += 1
         elif student['pref'] == 'Fish':
@@ -57,6 +60,7 @@ def get_stats():
     return jsonify({
         'Chicken': chicken,
         'Fish': fish,
+        'Vegetable': vegetable,
         'Computer Science (Special)': cs_special,
         'Information Technology (Special)': it_special,
         'Computer Science': cs,
