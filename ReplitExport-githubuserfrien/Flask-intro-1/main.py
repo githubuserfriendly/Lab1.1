@@ -18,4 +18,10 @@ def hello_world():
 def get_students():
     return jsonify(data) # return student data in response
 
+@app.route('/students/<id>')
+def get_student(id):
+  for student in data: 
+    if student['id'] == id: # filter out the students without the specified id
+      return jsonify(student)
+
 app.run(host='0.0.0.0', port=8080, debug=True)
